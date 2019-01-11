@@ -67,6 +67,8 @@ class Game extends Component {
   }
 
   render() {
+    const canRoll =
+      this.state.locked.every(x => x) || this.state.rollsLeft <= 0;
     return (
       <section>
         <Dice
@@ -74,11 +76,7 @@ class Game extends Component {
           locked={this.state.locked}
           handleClick={this.toggleLocked}
         />
-        <button
-          className="Game-reroll"
-          disabled={this.state.locked.every(x => x)}
-          onClick={this.roll}
-        >
+        <button className="Game-reroll" disabled={canRoll} onClick={this.roll}>
           {this.state.rollsLeft} Rerolls Left
         </button>
         <ScoreTable doScore={this.doScore} scores={this.state.scores} />

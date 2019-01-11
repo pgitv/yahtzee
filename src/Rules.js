@@ -62,7 +62,7 @@ class FullHouse extends Rule {
   // TODO
   evalRoll = dice => {
     const diceFreq = this.freq(dice);
-    for (var values of diceFreq.values()) {
+    for (let values of diceFreq.values()) {
       if (values < 2 || values > 3) {
         return 0;
       }
@@ -73,8 +73,19 @@ class FullHouse extends Rule {
 
 /** Check for small straights. */
 
-class SmallStraight {
+class SmallStraight extends Rule {
   // TODO
+  evalRoll = dice => {
+    const diceSet = new Set(dice);
+    const perm1 = [1, 2, 3, 4].every(el => diceSet.has(el));
+    const perm2 = [2, 3, 4, 5].every(el => diceSet.has(el));
+    const perm3 = [3, 4, 5, 6].every(el => diceSet.has(el));
+
+    if (perm1 || perm2 || perm3) {
+      return this.score;
+    }
+    return 0;
+  };
 }
 
 /** Check for large straights. */
