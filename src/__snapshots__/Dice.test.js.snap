@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`passes snapshot test Locked 1`] = `
+<div
+  className="Dice"
+>
+  <Die
+    handleClick={null}
+    idx={0}
+    key="0"
+    locked={true}
+    val={1}
+  />
+</div>
+`;
+
+exports[`passes snapshot test UNlock 1`] = `
+<div
+  className="Dice"
+>
+  <Die
+    handleClick={null}
+    idx={0}
+    key="0"
+    locked={false}
+    val={1}
+  />
+</div>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`passes snapshot test after changing state to locked 1`] = `
+<button
+  className="Die Die-locked"
+  onClick={[Function]}
+/>
+`;
+
+exports[`passes snapshot test changing state to unlocked 1`] = `
+<button
+  className="Die"
+  onClick={[Function]}
+/>
+`;

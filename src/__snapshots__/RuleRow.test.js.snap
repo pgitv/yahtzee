@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`passes snapshot test without a click 1`] = `
+<tr
+  className="RuleRow RuleRow-active"
+>
+  <td
+    className="RuleRow-name"
+  />
+  <td
+    className="RuleRow-score"
+  />
+</tr>
+`;
