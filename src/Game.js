@@ -7,12 +7,16 @@ const NUM_DICE = 5;
 const NUM_ROLLS = 3;
 
 class Game extends Component {
+  // static defaultProps = { dice: Array.from({ length: NUM_DICE }};
+
   constructor(props) {
     super(props);
     this.state = {
-      dice: Array.from({ length: NUM_DICE }),
+      dice: Array.from({ length: NUM_DICE }, () =>
+        Math.ceil(Math.random() * 6)
+      ),
       locked: Array(NUM_DICE).fill(false),
-      rollsLeft: NUM_ROLLS,
+      rollsLeft: NUM_ROLLS - 1,
       scores: {
         ones: undefined,
         twos: undefined,
@@ -32,6 +36,7 @@ class Game extends Component {
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
     this.toggleLocked = this.toggleLocked.bind(this);
+    this.roll();
   }
 
   roll(evt) {
